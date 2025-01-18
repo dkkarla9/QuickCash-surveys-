@@ -4,7 +4,7 @@ const CACHE_TIMESTAMP_KEY = 'paymentProofTimestamp';
 const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 
 let currentPage = 1;
-let itemsPerPage = 20;
+let itemsPerPage = 5;
 let payments = [];
 let filteredPayments = [];
 
