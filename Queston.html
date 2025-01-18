@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style/payment.css" rel="stylesheet">
+  </head>
+</head>
+<body>
+    <section class="faq-section" id="faq">
+        <div class="container">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="faq-grid">
+            <div class="faq-item">
+              <div class="faq-header">
+                <h3>How Do I Make Money and Get Paid?</h3>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-content">
+                <p>Simply complete tasks, surveys, or activities in the app. Once you meet the payout requirements, you'll receive your earnings directly through your preferred payment method.</p>
+              </div>
+            </div>
+      
+            <div class="faq-item">
+              <div class="faq-header">
+                <h3>How Do I Create an Account?</h3>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-content">
+                <p>When you open the app, a registration page will appear where you can easily create your account and start earning.</p>
+              </div>
+            </div>
+      
+            <div class="faq-item">
+              <div class="faq-header">
+                <h3>Can I See Proof That Users Are Getting Paid?</h3>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-content">
+                <p>Absolutely! We believe in complete transparency. We regularly show proof of payouts to our users, ensuring trust and confidence in our platform.</p>
+              </div>
+            </div>
+      
+            <div class="faq-item">
+              <div class="faq-header">
+                <h3>How Many Devices Can I Use?</h3>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-content">
+                <p>You can use one device per household. Any attempts to use multiple devices or bots to gain credits will be detected and lead to account suspension, with no payouts.</p>
+              </div>
+            </div>
+      
+            <div class="faq-item">
+              <div class="faq-header">
+                <h3>Can I Get Paid Through PayPal, Payoneer, or Bank?</h3>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-content">
+                <p>Yes! We offer payouts via PayPal, Payoneer, and direct bank transfers for your convenience.</p>
+              </div>
+            </div>
+      
+            <div class="faq-item">
+              <div class="faq-header">
+                <h3>Have More Questions?</h3>
+                <span class="faq-icon">+</span>
+              </div>
+              <div class="faq-content">
+                <p>We're here to help! Reach out to us anytime at quickcashsurveys@proton.me, and we'll get back to you as soon as possible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <style>
+          .faq-section {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.02);
+          }
+      
+          .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(45deg, #64ffda, #00bfff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+          }
+      
+          .faq-grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto;
+          }
+      
+          .faq-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+          }
+      
+          .faq-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+          }
+      
+          .faq-header {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.03);
+          }
+      
+          .faq-header h3 {
+            font-size: 1.1rem;
+            color: #64ffda;
+            margin: 0;
+          }
+      
+          .faq-icon {
+            color: #64ffda;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+          }
+      
+          .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+          }
+      
+          .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+          }
+      
+          .faq-item.active .faq-content {
+            max-height: 200px;
+            padding: 1.5rem;
+          }
+      
+          .faq-content p {
+            margin: 0;
+            color: #8892b0;
+            line-height: 1.6;
+          }
+      
+          @media (max-width: 768px) {
+            .faq-section {
+              padding: 3rem 1rem;
+            }
+      
+            .section-title {
+              font-size: 1.75rem;
+            }
+      
+            .faq-header h3 {
+              font-size: 1rem;
+            }
+          }
+        </style>
+      
+        <script>
+          document.querySelectorAll('.faq-header').forEach(header => {
+            header.addEventListener('click', () => {
+              const item = header.parentElement;
+              const isActive = item.classList.contains('active');
+              
+              // Close all items
+              document.querySelectorAll('.faq-item').forEach(faqItem => {
+                faqItem.classList.remove('active');
+              });
+      
+              // Open clicked item if it wasn't active
+              if (!isActive) {
+                item.classList.add('active');
+              }
+            });
+          });
+        </script>
+      </section>
+</body>
+</html>
