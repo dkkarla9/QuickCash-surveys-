@@ -4,12 +4,11 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <link href="style/payment.css" rel="stylesheet">
+  <!-- Include Adcash library -->
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 </head>
 
 <body>
@@ -44,17 +43,21 @@
           It's simple, quick, and free to download. Start now and turn your time into cash!
         </p>
         <div class="download-buttons">
-          <a href="https://www.amazon.com/gp/product/B0DTBQ2R9H" target="_blank">
-            <button class="download-btn">Download</button>
+          <a href="" target="_blank">
+            <button class="download-btn" onclick="showInterstitial(event)">Download</button>
           </a>
           <a href="#download" target="_blank">
-            <button class="download-btn">How To Download</button>
+            <button class="download-btn" onclick="showInterstitial(event)">How To Download</button>
           </a>
         </div>
-        
       </div>
     </section>
-
+    <!-- Autotag script remains here -->
+    <script type="text/javascript">
+      aclib.runAutoTag({
+        zoneId: 'lwu8unorde',
+      });
+    </script>
     <section class="slider-section">
       <div class="slider-container">
         <div class="slider">
@@ -490,6 +493,26 @@
         }
       });
     });
+
+    function showInterstitial(event) {
+      // Prevent default link behavior temporarily (optional, remove if you want link to proceed immediately)
+      event.preventDefault();
+      const link = event.target.closest('a'); // Get the parent <a> tag
+
+      if (typeof aclib !== 'undefined' && typeof aclib.runInterstitial === 'function') {
+        aclib.runInterstitial({
+          zoneId: '9607518'
+        });
+        // Proceed to the link after ad (optional delay)
+        setTimeout(() => {
+          if (link) window.location.href = link.href;
+        }, 500); // Adjust delay as needed (500ms gives ad time to trigger)
+      } else {
+        alert('Oops! The ad couldn’t load. Please try again or check your connection.');
+        // Proceed to the link even if ad fails
+        if (link) window.location.href = link.href;
+      }
+    }
   </script>
 </body>
 
